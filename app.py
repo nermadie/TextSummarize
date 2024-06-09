@@ -1,7 +1,13 @@
-from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
+from transformers import AutoModelForSeq2SeqLM, T5Tokenizer
 
+# Load the model
 model = AutoModelForSeq2SeqLM.from_pretrained("./results")
-tokenizer = AutoTokenizer.from_pretrained("./results")
+
+# Load the tokenizer
+try:
+    tokenizer = T5Tokenizer.from_pretrained("./results")
+except ValueError:
+    tokenizer = T5Tokenizer.from_pretrained("./results", use_fast=False)
 
 
 def generate_summary(
