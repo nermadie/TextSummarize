@@ -4,10 +4,7 @@ from transformers import AutoModelForSeq2SeqLM, T5Tokenizer
 model = AutoModelForSeq2SeqLM.from_pretrained("./results")
 
 # Load the tokenizer
-try:
-    tokenizer = T5Tokenizer.from_pretrained("./results")
-except ValueError:
-    tokenizer = T5Tokenizer.from_pretrained("./results", use_fast=False)
+tokenizer = T5Tokenizer.from_pretrained("./results", use_fast=False)
 
 
 def generate_summary(
