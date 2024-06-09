@@ -44,7 +44,7 @@ iface = gr.Interface(
     inputs=gr.Textbox(lines=2, label="Enter the text you want to summarize:"),
     outputs=gr.Textbox(label="Summarized text:"),
     title="Simple Summarizer",
-    description="Enter a text and get a summary.",
+    description="Model: ViT5-base-text-summarize.",
 )
 
 # Launch the interface
